@@ -15,6 +15,7 @@ class natefm.Server
 		@app.register '.eco', eco
 		
 		@app.use assets(src: 'client')
+		@app.use express.static('client')
 		@app.use express.bodyParser()
 		@app.use express.cookieParser()
 		

@@ -2,6 +2,9 @@
 <html>
 <head>
 	<title>nate.fm &mdash; powered by Rdio</title>
+	<%- css('screen') %>
+	<script type="text/javascript" src="http://use.typekit.com/bhc1mnq.js"></script>
+	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
 	<%- @body %>

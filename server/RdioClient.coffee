@@ -1,4 +1,4 @@
-Rdio = require '../vendor/rdio'
+Rdio = require './lib/rdio'
 
 class natefm.RdioClient
 	
