@@ -5,3 +5,4 @@ exports.config =
 		apikey: 'your api key'
 		secret: 'your api secret'
 		user:   'your user key'
+		playbackToken: 'your playback token'

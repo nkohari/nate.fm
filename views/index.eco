@@ -2,7 +2,7 @@
 	found <%= @comments.length %> comments:
 	<ul>
 		<% for comment in @comments: %>
-			<li>
+			<li class="rdio-item" data-key="<%= comment.reviewed_item.key %>">
 				<img src="<%= comment.reviewed_item.icon %>"/>
 				<span><%= comment.comment %></span>
 			</li>
