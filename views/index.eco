@@ -1,1 +1,11 @@
-sup
+<div>
+	found <%= @comments.length %> comments:
+	<ul>
+		<% for comment in @comments: %>
+			<li>
+				<img src="<%= comment.reviewed_item.icon %>"/>
+				<span><%= comment.comment %></span>
+			</li>
+		<% end %>
+	</ul>
+</div>
