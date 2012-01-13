@@ -1,5 +1,6 @@
 fs      = require 'fs'
 util    = require 'util'
+assets  = require 'connect-assets'
 express = require 'express'
 eco     = require 'eco'
 
@@ -12,6 +13,8 @@ class natefm.Server
 		@app = express.createServer()
 
 		@app.register '.eco', eco
+		
+		@app.use assets(src: 'client')
 		@app.use express.bodyParser()
 		@app.use express.cookieParser()
 		
@@ -32,6 +35,7 @@ class natefm.Server
 		require('../controllers/' + filename) for filename in fs.readdirSync 'controllers'
 		for name, controller of natefm.Server.controllers
 			controller.server = this
+			controller.config = @config
 			controller.rdio   = @rdio
 			log "loaded #{name} controller"
 	

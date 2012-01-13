@@ -3,8 +3,9 @@
 util = require 'util'
 fs   = require 'fs'
 
-global._   = require 'underscore'
-global.log = (message) -> console.log "[natefm] #{message}"
+global._    = require 'underscore'
+global.log  = (message) -> console.log "[natefm] #{message}"
+global.dump = (obj)     -> console.log "[natefm] #{util.inspect(obj)}"
 	
 global.natefm = {}
 

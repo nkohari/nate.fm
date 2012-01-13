@@ -1,2 +1,20 @@
 <!doctype html>
-<%- @body %>
+<html>
+<head>
+	<title>nate.fm &mdash; powered by Rdio</title>
+</head>
+<body>
+	<%- @body %>
+	<div id="rdioswf"></div>
+</body>
+<%- js('http://code.jquery.com/jquery-1.7.1.min.js') %>
+<%- js('lib/jquery.rdio.js') %>
+<%- js('natefm') %>
+<script type='text/javascript'>
+$(function() {
+	natefm.Client.start({
+		playbackToken: '<%= @playbackToken %>'
+	});
+});
+</script>
+</html>
