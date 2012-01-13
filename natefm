@@ -1,0 +1,18 @@
+#!/usr/bin/env ./node_modules/coffee-script/bin/coffee
+
+util = require 'util'
+fs   = require 'fs'
+
+global._   = require 'underscore'
+global.log = (message) -> console.log "[natefm] #{message}"
+	
+global.natefm = {}
+
+libs = fs.readdirSync './server'
+require "./server/#{lib}" for lib in libs
+
+config = require('./config/config').config
+routes = require('./config/routes').routes
+
+server = new natefm.Server(config, routes)
+server.start()
