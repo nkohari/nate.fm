@@ -4,7 +4,6 @@ class natefm.HomeController extends natefm.Controller
 	
 	index: (req, res) ->
 		@rdio.getComments (err, comments) =>
-			dump comments
 			res.render 'index.eco',
 				playbackToken: @config.rdio.playbackToken
 				comments:      comments

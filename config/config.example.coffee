@@ -1,6 +1,9 @@
 exports.config =
 	http:
-		port:   3000
+		port: 3000
+	redis:
+		host: 'localhost'
+		port: 6379
 	rdio:
 		apikey: 'your api key'
 		secret: 'your api secret'

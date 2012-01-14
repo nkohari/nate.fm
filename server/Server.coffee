@@ -9,7 +9,9 @@ class natefm.Server
 	@controllers: []
 
 	constructor: (@config, @routes) ->
-		@rdio = new natefm.RdioClient(@config.rdio)
+		@repository = new natefm.Repository(@config, this)
+		@rdio = new natefm.RdioClient(@config, this)
+		
 		@app = express.createServer()
 
 		@app.register '.eco', eco
