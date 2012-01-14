@@ -7,7 +7,14 @@
 	<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
-	<%- @body %>
+	<div id="layout">
+		<div id="top">
+			<h1>nate.fm &mdash; powered by Rdio</h1>
+		</div>
+		<div id="main">
+			<%- @body %>
+		</div>
+	</div>
 	<div id="rdioswf"></div>
 </body>
 <%- js('http://code.jquery.com/jquery-1.7.1.min.js') %>
